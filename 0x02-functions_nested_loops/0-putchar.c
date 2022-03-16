@@ -3,22 +3,13 @@
 /**
  * main - entry point
  *
- * Description: Prints Holberton with _putchar
- *
- * Return: always 0
+ * Return: 0
  */
-
 int main(void)
 {
-	int i = 0;
-	char c;
-	char s[] = "_putchar\n";
+	char *_putchar;
 
-	while (i <= 9)
-	{
-		c = s[i];
-		_putchar(c);
-		i++;
-	}
+	for (putchar = "_putchar\n"; *_putchar != '\0'; ++_putchar)
+		_putchar(*_putchar);
 	return (0);
 }
