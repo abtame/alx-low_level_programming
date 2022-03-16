@@ -1,4 +1,3 @@
-
 #include "main.h"
 /**
  * main - prints the string "Holberton" from a character array.
@@ -8,7 +7,7 @@ int main(void)
 {
 	char c[] = "_putchar";
 	int i;
-
+	
 	for (i = 0; i < 8; i++)
 	{
 		_putchar(c[i]);
