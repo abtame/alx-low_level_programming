@@ -1,32 +1,37 @@
-#include <stdlib.h>
+
+#include "notrebloh.h"
 #include <stdio.h>
-#include "holberton.h"
+#include <stdlib.h>
+#include <string.h>
+
 /**
- * array_range - get len, malloc * len
- * loop size of len to insert min++ into new arr
- * @min: min input
- * @max: max input
- * Return: pointer to new arr of ints
+ * *array_range - make  memory for an array
+ * @min: int type
+ * @max: int type
+ * Return:  return pointer to array
  */
+
 int *array_range(int min, int max)
 {
-	int *arr;
-	int i, len;
+	int *ptr;
+	int arr;
 
 	if (min > max)
-		return (NULL);
-
-	for (len = 0; len < (max - min); len++)
-		;
-
-	arr = malloc(sizeof(int) * (len + 1));
-	if (arr == NULL)
-		return (NULL);
-
-	for (i = 0; i <= len; i++)
 	{
-		arr[i] = min++;
+		return (NULL);
 	}
 
-	return (arr);
+	ptr = malloc(sizeof(int) * (max - min + 1));
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
+	arr = 0;
+	while (min <= max)
+	{
+		ptr[arr] = min;
+		min++;
+		arr++;
+	}
+	return (ptr);
 }
