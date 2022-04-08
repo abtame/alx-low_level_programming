@@ -1,26 +1,30 @@
-#include <stdlib.h>
+#include "main.h"
 #include <stdio.h>
-#include "holberton.h"
+#include <stdlib.h>
+
 /**
- * _calloc - print 0s into 2D grid
- * @nmemb: array num
- * @size: size of ea array element
- * Return: 0
+ * *_calloc - function to allocates memory
+ * @nmemb: unsigned int type
+ * @size: unsigned int type
+ * Return: return pointer to array
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *arr;
-	unsigned int i;
+	char *ptr;
+	unsigned int count;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-
-	arr = malloc(nmemb * size);
-	if (arr == NULL)
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
+	{
 		return (NULL);
-
-	for (i = 0; i < (nmemb * size); i++)
-		arr[i] = 0;
-
-	return (arr);
+	}
+	count = 0;
+	while (count < nmemb * size)
+	{
+		ptr[count] = 0;
+		count++;
+	}
+	return (ptr);
 }
